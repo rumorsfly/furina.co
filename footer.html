@@ -1,0 +1,16 @@
+## -*- coding: utf-8 -*-
+
+<div id="footer_wrapper">
+    % if c.www_current_url.find("pastebit.com") == -1:
+    <div id="footer_inner" class="inside">
+        <%
+            path = '/sabayon/www/include/footer_menu.html.inc'
+            with open(path + c.sourcefile, 'r') as f:
+                footer_data = f.read()
+        %>
+        ${footer_data}
+    </div>
+    % else:
+        <div id="pastebit-footer"></div>
+    % endif
+</div>
